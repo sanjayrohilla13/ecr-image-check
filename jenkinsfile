@@ -32,9 +32,9 @@ pipeline {
                         echo ${BUCKETNAME}
                         KEYNAME = ${BUCKETNAME}-${KEYNAME}.zip
                         echo ${KEYNAME}
-                        aws ecr batch-get-image \
-                            --repository-name "testqube" \
-                            --image-ids imageTag="9.0-145" || not_exist=true
+                        #aws ecr batch-get-image \
+                        #    --repository-name "testqube" \
+                        #    --image-ids imageTag="9.0-145" || not_exist=true
                         if [ $not_exist ]; then
                             echo "Image doesn't exist"
                         else
